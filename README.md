@@ -5,7 +5,7 @@ E-Portfolio for Security and Risk Management Module
 
 **Student Name:** Aisha Almarri  
 **Module:** SRM_PCOM7E - Security and Risk Management  
-**Course:** MSc Enterprise IT Management  
+**Course:** MSc Cyber Security  
 
 ## Portfolio Overview
 
