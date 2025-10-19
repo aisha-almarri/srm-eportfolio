@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 11: Advanced Risk Management | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .methodology-box {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .method-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .method-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .quantitative-result {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .probability-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .architecture-design {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .individual-reflection {
+            background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+            border-left: 4px solid var(--success);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-chess-queen"></i> Unit 11: Advanced Risk Management</h1>
+            <p>Individual project - Executive summary and strategic synthesis</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> February 2025</span>
+                <span><i class="fas fa-clock"></i> Capstone Project</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-rocket"></i> Project Overview</h2>
+                <p>This unit involved the culmination of the module's learning into an Individual Project: Executive Summary for Pampered Pets. Unlike the team-based report in Unit 6, this was a solo endeavour, requiring independent synthesis of risk concepts, application of quantitative modelling techniques, and design of a comprehensive strategic solution.</p>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-cogs"></i> Multi-Method Quantitative Approach</h2>
+                <div class="methodology-box">
+                    <h3><i class="fas fa-sitemap"></i> Integrated Methodology Selection</h3>
+                    <div class="method-grid">
+                        <div class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h4>STRIDE</h4>
+                            <p>Systematic threat identification across application components</p>
+                        </div>
+                        <div class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h4>DREAD</h4>
+                            <p>Actionable risk scoring for prioritization and decision-making</p>
+                        </div>
+                        <div class="method-item">
+                            <div class="method-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Monte Carlo</h4>
+                            <p>Probabilistic modeling of supply chain uncertainties</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-calculator"></i> Quantitative Risk Modeling</h2>
+                
+                <div class="quantitative-result">
+                    <h3><i class="fas fa-chart-pie"></i> Risk Probability Analysis</h3>
+                    <div class="probability-value">52%</div>
+                    <p>Probability of quality incident in international supply chain</p>
+                    
+                    <div class="probability-value">51%</div>
+                    <p>Probability of supply chain disruption incident</p>
+                </div>
+                
+                <div class="architecture-design">
+                    <h3><i class="fas fa-network-wired"></i> Disaster Recovery Architecture</h3>
+                    <p><strong>Client Requirements:</strong> &lt;1 minute RTO/RPO</p>
+                    <p><strong>Solution:</strong> Active-active Azure deployment with geo-redundancy</p>
+                    <p><strong>Vendor Lock-in Mitigation:</strong> Containerization, Infrastructure-as-Code (Terraform), data portability measures</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-trophy"></i> Application of Knowledge</h2>
+                
+                <div class="methodology-box">
+                    <h3><i class="fas fa-check-circle"></i> Learning Outcomes Demonstrated</h3>
+                    <ul>
+                        <li><strong>LO3:</strong> Critically determine appropriate methodologies, tools and techniques - evidenced by selection of STRIDE/DREAD/Monte Carlo and DR architecture design</li>
+                        <li><strong>LO4:</strong> Articulate legal, social, ethical, and professional issues - addressed through GDPR compliance, ethical supply chain analysis, and vendor lock-in mitigation</li>
+                    </ul>
+                </div>
+                
+                <div class="architecture-design">
+                    <h3><i class="fas fa-search"></i> Critical Analysis Elements</h3>
+                    <ul>
+                        <li><strong>Justification of Choices:</strong> Every methodological choice supported by academic and industry reasoning</li>
+                        <li><strong>Analysis of Trade-offs:</strong> Balanced cost of vendor lock-in mitigation versus strategic flexibility gained</li>
+                        <li><strong>Evidence-Based Conclusions:</strong> Qualified recommendation contingent on £2.54m risk mitigation investment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-user"></i> Individual vs Team Experience</h2>
+                
+                <div class="individual-reflection">
+                    <h3><i class="fas fa-brain"></i> Autonomous Depth</h3>
+                    <p>Complete autonomy over direction, methodology, and structure allowed for deeper, more personal engagement with quantitative aspects, which proved challenging but intellectually rewarding.</p>
+                </div>
+                
+                <div class="individual-reflection">
+                    <h3><i class="fas fa-balance-scale"></i> Full Accountability</h3>
+                    <p>The success or failure of the analysis rested entirely on my shoulders, heightening attention to detail in calculations and assumption documentation.</p>
+                </div>
+                
+                <div class="individual-reflection">
+                    <h3><i class="fas fa-puzzle-piece"></i> Synthesis Challenge</h3>
+                    <p>Without team members to cover specific sections, the task of synthesizing all domains—quantitative risk, supply chain security, DR planning, and compliance—into a single coherent narrative required comprehensive knowledge across all module areas.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-chart-line"></i> Strategic Recommendations</h2>
+                
+                <div class="methodology-box">
+                    <h3><i class="fas fa-layer-group"></i> Prioritized Implementation</h3>
+                    <ul>
+                        <li><strong>Tier 1:</strong> Regulatory compliance (GDPR, PCI-DSS) and critical security controls</li>
+                        <li><strong>Tier 2:</strong> Supply chain risk mitigation and quality assurance</li>
+                        <li><strong>Tier 3:</strong> Advanced monitoring and continuous improvement</li>
+                    </ul>
+                </div>
+                
+                <div class="architecture-design">
+                    <h3><i class="fas fa-pound-sign"></i> Investment Justification</h3>
+                    <p>The £2.54m risk mitigation investment was directly derived from quantitative models and linked to specific risk reduction percentages, providing clear ROI in terms of risk mitigation and business protection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

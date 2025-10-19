@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 8: Risk Modeling Techniques | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .application-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .practical-insight {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .evolution-box {
+            background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-project-diagram"></i> Unit 8: Risk Modeling Techniques</h1>
+            <p>Practical applications of quantitative models to security problems</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> December 2024</span>
+                <span><i class="fas fa-clock"></i> Applied Modeling</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-cogs"></i> Learning Focus</h2>
+                <div class="application-box">
+                    <h3><i class="fas fa-rocket"></i> Applying Quantitative Models</h3>
+                    <p>Building on Unit 7, this unit focused on the practical application of modeling techniques, specifically Monte Carlo simulation, to tangible security problems. The emphasis shifted from theoretical understanding to practical implementation.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-book-open"></i> Key Reading Synthesis</h2>
+                
+                <div class="application-box">
+                    <h3><i class="fas fa-tools"></i> Accessible Implementation</h3>
+                    <p><strong>Eckstein & Riedmueller (2002):</strong> The YASAI Excel add-in paper demonstrated the accessibility of Monte Carlo simulation. While we did not use the tool, the principles were clear:</p>
+                    
+                    <div class="practical-insight">
+                        <h4><i class="fas fa-sitemap"></i> Core Process</h4>
+                        <ul>
+                            <li><strong>Define Input Distributions:</strong> For cost of an incident or likelihood of an attack</li>
+                            <li><strong>Analyze Output Distribution:</strong> Of the result (e.g., total annual loss)</li>
+                            <li><strong>Interpret Results:</strong> Understand probability ranges rather than single estimates</li>
+                        </ul>
+                        <p>This demystified the process and showed that sophisticated modeling could be implemented with accessible tools.</p>
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <h3><i class="fas fa-shield-alt"></i> Advanced Applications</h3>
+                    <p><strong>Zografopoulos et al. (2021) & Aijaz & Nazir (2024):</strong> These papers were pivotal in showing advanced applications of quantitative models to modern security challenges.</p>
+                    
+                    <div class="practical-insight">
+                        <h4><i class="fas fa-industry"></i> Cyber-Physical Systems</h4>
+                        <p>Zografopoulos provided a comprehensive case study linking threat models to risk assessment in critical infrastructure, demonstrating how quantitative methods can be applied to complex, interconnected systems.</p>
+                    </div>
+                    
+                    <div class="practical-insight">
+                        <h4><i class="fas fa-user-secret"></i> Dynamic Threat Modeling</h4>
+                        <p>Aijaz & Nazir's use of Markov models for dynamic social engineering attacks showed how to model threats that change state over time, moving beyond static risk assessments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-search"></i> Critical Analysis and Application</h2>
+                
+                <div class="evolution-box">
+                    <h3><i class="fas fa-sync-alt"></i> From Static to Dynamic Models</h3>
+                    <p>The key takeaway was the evolution from static to dynamic risk modeling approaches:</p>
+                    
+                    <div class="application-box">
+                        <h4><i class="fas fa-table"></i> Static Models (Traditional)</h4>
+                        <ul>
+                            <li>Simple risk matrices with fixed likelihood/impact scores</li>
+                            <li>Point-in-time assessments</li>
+                            <li>Limited consideration of changing conditions</li>
+                            <li>Example: Basic risk registers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="application-box">
+                        <h4><i class="fas fa-wave-square"></i> Dynamic Models (Advanced)</h4>
+                        <ul>
+                            <li>Monte Carlo simulation incorporating uncertainty</li>
+                            <li>Markov models for state-based threat analysis</li>
+                            <li>Real-time risk assessment capabilities</li>
+                            <li>Example: Predictive risk modeling</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="application-box">
+                    <h3><i class="fas fa-project-diagram"></i> Project Application</h3>
+                    <p>For our final project status document, I advocated for including a conceptual description of how a Monte Carlo approach could be used to model the financial impact of our top three identified risks.</p>
+                    
+                    <div class="practical-insight">
+                        <h4><i class="fas fa-chart-line"></i> Moving Beyond Labels</h4>
+                        <p>This approach moved us beyond simple "High/Medium/Low" labels to probabilistic statements like:</p>
+                        <ul>
+                            <li>"There's a 70% probability the data breach cost will be between £50,000-£100,000"</li>
+                            <li>"The system downtime risk has a 25% chance of exceeding our recovery time objective"</li>
+                            <li>"Supply chain disruption has a 40% probability of causing 2-4 weeks delay"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-lightbulb"></i> Practical Implementation Insights</h2>
+                
+                <div class="practical-insight">
+                    <h3><i class="fas fa-calculator"></i> Tool Selection Strategy</h3>
+                    <p>Different modeling tools serve different purposes:
+                    <ul>
+                        <li><strong>Excel with plugins:</strong> Accessible Monte Carlo simulation for basic scenarios</li>
+                        <li><strong>Specialized software:</strong> Advanced analysis for complex systems</li>
+                        <li><strong>Custom scripts:</strong> Tailored solutions for specific risk scenarios</li>
+                        <li><strong>Cloud platforms:</strong> Scalable modeling for enterprise applications</li>
+                    </ul>
+                </div>
+                
+                <div class="practical-insight">
+                    <h3><i class="fas fa-database"></i> Data Requirements</h3>
+                    <p>Successful implementation depends on:
+                    <ul>
+                        <li>Historical incident data for probability estimation</li>
+                        <li>Industry benchmarks for impact assessment</li>
+                        <li>Expert judgment for parameter estimation</li>
+                        <li>Continuous data collection for model validation</li>
+                    </ul>
+                </div>
+                
+                <div class="practical-insight">
+                    <h3><i class="fas fa-chart-bar"></i> Communication Strategy</h3>
+                    <p>Effectively communicating model results requires:
+                    <ul>
+                        <li>Visualizations that show probability distributions</li>
+                        <li>Scenario analysis for different risk outcomes</li>
+                        <li>Sensitivity analysis to show key drivers</li>
+                        <li>Plain language explanations of statistical concepts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

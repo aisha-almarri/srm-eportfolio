@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 9: Service Availability | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .metric-box {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .metric-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .insight-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .key-concept {
+            background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-server"></i> Unit 9: Ensuring Service Availability</h1>
+            <p>Quantifying and managing availability risks</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> January 2025</span>
+                <span><i class="fas fa-clock"></i> Availability Metrics</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-chart-line"></i> Learning Focus</h2>
+                <p>This unit narrowed the focus to a key security objective: Availability. It explored how to formally model and assess the resilience of systems through quantitative metrics and stochastic modeling approaches.</p>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-book"></i> Key Reading Synthesis</h2>
+                
+                <div class="insight-card">
+                    <h3><i class="fas fa-file-alt"></i> Andrade (2017) - DRaaS Modeling</h3>
+                    <p>This paper was a masterclass in applied risk assessment. By modeling a Disaster-Recovery-as-a-Service (DRaaS) solution, it directly connected architectural decisions to quantifiable availability metrics like Reliability and Maintainability. It demonstrated how to use stochastic models (like Markov chains) to predict system uptime and identify single points of failure in a complex, cloud-based setup.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h3><i class="fas fa-sync-alt"></i> Popov et al. (2022) - Risk Assessment Principles</h3>
+                    <p>Revisiting general risk assessment principles from this text helped contextualise Andrade's work. It reinforced that availability risks are managed with the same fundamental process (Identify, Analyse, Evaluate, Treat) but require specific tools and metrics for meaningful analysis.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-tachometer-alt"></i> Critical Availability Metrics</h2>
+                <div class="metric-box">
+                    <h3><i class="fas fa-bullseye"></i> Service Level Objectives</h3>
+                    <div class="metric-grid">
+                        <div class="metric-item">
+                            <div class="metric-value">RTO</div>
+                            <div class="metric-label">Recovery Time Objective</div>
+                            <p>Maximum acceptable downtime</p>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">RPO</div>
+                            <div class="metric-label">Recovery Point Objective</div>
+                            <p>Maximum acceptable data loss</p>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">SLA</div>
+                            <div class="metric-label">Service Level Agreement</div>
+                            <p>Contractual availability targets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-lightbulb"></i> Critical Analysis and Application</h2>
+                
+                <div class="key-concept">
+                    <h3><i class="fas fa-crosshairs"></i> From Glossary to Design Parameters</h3>
+                    <p>The concept of Recovery Time Objective (RTO) and Recovery Point Objective (RPO) moved from being glossary terms to critical design parameters. Analysing the DRaaS model made it clear that without these targets, a disaster recovery plan is meaningless.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h3><i class="fas fa-project-diagram"></i> Team Application</h3>
+                    <p>In our team discussions, I used this learning to argue that our project's availability requirements needed to be stated explicitly in terms of RTO/RPO before we could properly assess the risks to them. This represented a significant maturation in our approach to availability risk management.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h3><i class="fas fa-calculator"></i> Quantitative Approach</h3>
+                    <p>The unit emphasized moving beyond qualitative availability statements ("high availability") to quantitative metrics that can be measured, monitored, and used for business decision-making.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-cogs"></i> Practical Implementation</h2>
+                
+                <div class="metric-box">
+                    <h3><i class="fas fa-network-wired"></i> Architecture Considerations</h3>
+                    <ul>
+                        <li><strong>Redundancy:</strong> Implementing multiple layers of redundancy for critical components</li>
+                        <li><strong>Load Balancing:</strong> Distributing traffic across multiple servers</li>
+                        <li><strong>Geographic Distribution:</strong> Deploying across multiple data centers</li>
+                        <li><strong>Automated Failover:</strong> Implementing automatic recovery mechanisms</li>
+                    </ul>
+                </div>
+                
+                <div class="insight-card">
+                    <h3><i class="fas fa-shield-alt"></i> Risk Mitigation Strategies</h3>
+                    <p>Understanding that availability risks require specific mitigation approaches including capacity planning, performance monitoring, and comprehensive disaster recovery planning that aligns with business continuity requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

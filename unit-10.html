@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 10: Disaster Recovery | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .testing-framework {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .testing-step {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .integration-box {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .key-insight {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .cloud-benefit {
+            background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-life-ring"></i> Unit 10: Disaster Recovery</h1>
+            <p>Validating resilience through testing and business continuity</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> January 2025</span>
+                <span><i class="fas fa-clock"></i> Resilience Testing</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-bullseye"></i> Learning Focus</h2>
+                <p>The final unit focused on the ultimate test of a risk management strategy: how to evaluate and validate disaster recovery (DR) plans, with a specific look at cloud technologies and practical testing methodologies.</p>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-book"></i> Key Reading Synthesis</h2>
+                
+                <div class="key-insight">
+                    <h3><i class="fas fa-cloud"></i> Alhazmi & Malaiya (2013) - Cloud-based DR Testing</h3>
+                    <p>This paper was foundational. Their method for using cloud infrastructure to inexpensively model and evaluate DR plans by injecting faults was ingenious. It highlighted a critical gap in many organisations: DR plans are often created but rarely tested effectively. Their approach provides a quantitative, repeatable way to measure a plan's effectiveness and identify its weaknesses before a real disaster strikes.</p>
+                </div>
+                
+                <div class="key-insight">
+                    <h3><i class="fas fa-sync-alt"></i> Zografopoulos et al. (2021) - Revisited</h3>
+                    <p>Re-reading this article in the context of DR was valuable. It cemented the link between the threat models and risk assessments from earlier units and the DR/BCP plans that are the final operational output. The "Case Studies" section showed how theoretical models translate into practical resilience for critical infrastructure.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-vial"></i> Cloud-based Testing Framework</h2>
+                <div class="testing-framework">
+                    <h3><i class="fas fa-flask"></i> Fault Injection Methodology</h3>
+                    
+                    <div class="testing-step">
+                        <h4><i class="fas fa-1"></i> Environment Replication</h4>
+                        <p>Create identical cloud environments for production and disaster recovery testing</p>
+                    </div>
+                    
+                    <div class="testing-step">
+                        <h4><i class="fas fa-2"></i> Controlled Fault Injection</h4>
+                        <p>Systematically introduce failures to test recovery mechanisms and procedures</p>
+                    </div>
+                    
+                    <div class="testing-step">
+                        <h4><i class="fas fa-3"></i> Performance Measurement</h4>
+                        <p>Quantify recovery times, data loss, and system performance during recovery</p>
+                    </div>
+                    
+                    <div class="testing-step">
+                        <h4><i class="fas fa-4"></i> Continuous Improvement</h4>
+                        <p>Use test results to refine DR plans and address identified weaknesses</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-cloud-upload-alt"></i> Cloud Technology Advantages</h2>
+                
+                <div class="cloud-benefit">
+                    <h3><i class="fas fa-money-bill-wave"></i> Cost-Effective Testing</h3>
+                    <p>Cloud infrastructure enables organizations to conduct comprehensive DR testing without significant capital investment in duplicate hardware, making regular testing financially feasible.</p>
+                </div>
+                
+                <div class="cloud-benefit">
+                    <h3><i class="fas fa-bolt"></i> Rapid Provisioning</h3>
+                    <p>The ability to quickly spin up and tear down test environments allows for more frequent and comprehensive testing cycles.</p>
+                </div>
+                
+                <div class="cloud-benefit">
+                    <h3><i class="fas fa-chart-bar"></i> Quantitative Metrics</h3>
+                    <p>Cloud platforms provide detailed monitoring and logging capabilities that enable precise measurement of recovery objectives and performance.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-lightbulb"></i> Critical Analysis and Application</h2>
+                
+                <div class="integration-box">
+                    <h3><i class="fas fa-puzzle-piece"></i> Full Circle Integration</h3>
+                    <p>This unit brought the entire module full circle. We started with fundamental risk science and ended with the practical execution of risk treatment plans. The key insight is that a DR plan is a living document that must be tested.</p>
+                </div>
+                
+                <div class="key-insight">
+                    <h3><i class="fas fa-clipboard-check"></i> Project Application</h3>
+                    <p>For the final project evaluation, I emphasised that our proposed risk treatments, especially those related to availability, would be incomplete without a recommendation for a regular, cloud-based testing regimen inspired by Alhazmi & Malaiya's work. This demonstrates a mature understanding of the risk management lifecycle.</p>
+                </div>
+                
+                <div class="key-insight">
+                    <h3><i class="fas fa-shipping-fast"></i> Operational Reality</h3>
+                    <p>The unit highlighted that theoretical risk assessments and mitigation strategies are only valuable if they can be practically implemented and validated through rigorous testing in realistic scenarios.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-tasks"></i> Implementation Framework</h2>
+                
+                <div class="testing-step">
+                    <h4><i class="fas fa-calendar-alt"></i> Testing Schedule</h4>
+                    <p>Establish regular testing intervals (quarterly, semi-annually) with different scenarios and failure types</p>
+                </div>
+                
+                <div class="testing-step">
+                    <h4><i class="fas fa-users"></i> Team Preparedness</h4>
+                    <p>Include personnel training and role-based recovery procedures in testing scenarios</p>
+                </div>
+                
+                <div class="testing-step">
+                    <h4><i class="fas fa-chart-line"></i> Performance Baselines</h4>
+                    <p>Establish baseline performance metrics to measure recovery effectiveness</p>
+                </div>
+                
+                <div class="testing-step">
+                    <h4><i class="fas fa-file-alt"></i> Documentation Updates</h4>
+                    <p>Maintain living documentation that evolves based on test results and lessons learned</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

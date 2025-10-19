@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4: Secure System Engineering | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .principle-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .principle-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .principle-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .mitigation-link {
+            background: #e8f6f3;
+            border-left: 4px solid var(--success);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-cogs"></i> Unit 4: Secure System Engineering</h1>
+            <p>Security by design principles and implementation</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> November 2024</span>
+                <span><i class="fas fa-clock"></i> Design Principles</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-file-alt"></i> Design Proposal</h2>
+                <div class="principle-box">
+                    <h3><i class="fas fa-laptop-code"></i> Applying Secure-by-Design Principles</h3>
+                    <p><strong>Author:</strong> Aisha Almarri | <strong>Date:</strong> November 2024</p>
+                    <p>Based on readings: Ross (NIST), Salter et al. (1998), and the GitHub Threat Model Cookbook.</p>
+                    <p>This document outlines how we can integrate security from the outset, rather than bolting it on later, creating a foundation for resilient system architecture.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-shield-alt"></i> Proposed Security Principles</h2>
+                
+                <div class="principle-box">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="fas fa-user-lock"></i>
+                        </div>
+                        <div>
+                            <h3>Principle of Least Privilege</h3>
+                            <p>All application components and users will operate with the minimum permissions necessary.</p>
+                        </div>
+                    </div>
+                    <div class="mitigation-link">
+                        <strong>Mitigates:</strong> "Elevation of Privilege" threat from Unit 3 threat modeling
+                    </div>
+                </div>
+                
+                <div class="principle-box">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <h3>Defence in Depth</h3>
+                            <p>We will implement multiple layers of security (e.g., WAF, input validation, database encryption) so that a failure in one layer does not lead to a total compromise.</p>
+                        </div>
+                    </div>
+                    <p>This approach ensures that even if one security control fails, additional layers provide backup protection.</p>
+                </div>
+                
+                <div class="principle-box">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <div>
+                            <h3>Fail Securely</h3>
+                            <p>Our application will default to a "deny" state if an error occurs, preventing unintended access during system failures.</p>
+                        </div>
+                    </div>
+                    <p>This principle ensures that security is maintained even in edge cases and failure scenarios.</p>
+                </div>
+                
+                <div class="principle-box">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <div>
+                            <h3>Separation of Duties</h3>
+                            <p>Critical actions (e.g., deploying to production) will require approval from two team members.</p>
+                        </div>
+                    </div>
+                    <p>This prevents single points of failure in critical security processes.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-gavel"></i> Justification & Integration</h2>
+                <div class="principle-box">
+                    <h3><i class="fas fa-sitemap"></i> Multidisciplinary Approach</h3>
+                    <p>As argued by Salter et al., security must be a multidisciplinary effort. By baking these principles into our design from the start (as suggested by the SSE guidelines), we reduce the long-term cost and complexity of managing risk.</p>
+                    
+                    <div class="mitigation-link">
+                        <strong>Alignment:</strong> These principles directly support the ERM concepts from Unit 2 by embedding risk management into the system architecture itself.
+                    </div>
+                </div>
+                
+                <div class="principle-box">
+                    <h3><i class="fas fa-money-bill-wave"></i> Cost-Benefit Analysis</h3>
+                    <p>Implementing security early in the design phase is significantly more cost-effective than retrofitting security controls later in the development lifecycle.</p>
+                    <ul>
+                        <li>Early implementation reduces remediation costs by up to 80%</li>
+                        <li>Prevents security-related delays in deployment</li>
+                        <li>Reduces technical debt associated with security patches</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-book"></i> Academic Foundation</h2>
+                <div class="principle-box">
+                    <h4><i class="fas fa-graduation-cap"></i> Key References</h4>
+                    <ul>
+                        <li><strong>Ross (NIST):</strong> Comprehensive guidelines for multidisciplinary security engineering</li>
+                        <li><strong>Salter et al. (1998):</strong> Foundational work on secure system engineering methodology</li>
+                        <li><strong>GitHub Threat Model Cookbook:</strong> Practical implementation guidance for modern applications</li>
+                        <li><strong>ISO/IEC 27034:</strong> Application security standards and best practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

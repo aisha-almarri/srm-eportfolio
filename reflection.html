@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflective Analysis | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .comparison-box {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .comparison-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .reflection-point {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .team-experience {
+            background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+            border-left: 4px solid var(--success);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .professional-impact {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .word-count {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 8px;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-file-contract"></i> Reflective Analysis</h1>
+            <p>The Evolution of a Risk Management Perspective</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> February 2025</span>
+                <span><i class="fas fa-clock"></i> 998 Words</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-chart-line"></i> Evaluation of Final Project vs. Status Document</h2>
+                <p>The journey from the Unit 6 Team Status Document to the Unit 11 Individual Executive Summary represents a profound evolution in my understanding and application of security and risk management. The two documents, while addressing the same client, are products of different learning stages and demonstrate a marked shift from qualitative awareness to quantitative, strategic synthesis.</p>
+                
+                <div class="comparison-box">
+                    <h3><i class="fas fa-balance-scale"></i> Comparative Analysis</h3>
+                    <div class="comparison-grid">
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-file-alt"></i> Unit 6 Status Document</h4>
+                            <ul>
+                                <li>Qualitative risk assessment</li>
+                                <li>Descriptive risk labeling</li>
+                                <li>Standard best practice recommendations</li>
+                                <li>Competent hazard listing</li>
+                                <li>Team collaboration focus</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-chess-queen"></i> Unit 11 Executive Summary</h4>
+                            <ul>
+                                <li>Quantitative risk modeling</li>
+                                <li>Probabilistic analysis</li>
+                                <li>Costed investment justification</li>
+                                <li>Strategic business case</li>
+                                <li>Individual synthesis mastery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reflection-point">
+                    <p><strong>Key Insight:</strong> The Status Document was a diagnostic report identifying the "illness," while the Executive Summary was a strategic prescription proposing a detailed, costed "treatment plan" with clear prognosis.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-cogs"></i> Reflection on Security and Risk Management Process</h2>
+                <p>My perception of the Security and Risk Management (SRM) process has been fundamentally reshaped through this module. I entered with a somewhat technical view, seeing SRM as a series of controls to implement. I now understand it as a continuous, holistic, and strategic discipline that is integral to business decision-making.</p>
+                
+                <div class="reflection-point">
+                    <h4><i class="fas fa-book"></i> Conceptual Evolution</h4>
+                    <p>The core textbook by Aven & Thekdi (2025) was instrumental in this shift, particularly its emphasis on risk as "the effect of uncertainty on objectives." This definition forced me to look beyond IT systems to business goals, understanding that risks like losing key clients are direct threats to revenue and strategic positioning.</p>
+                </div>
+                
+                <div class="reflection-point">
+                    <h4><i class="fas fa-sitemap"></i> Methodological Hierarchy</h4>
+                    <p>I gained a critical appreciation for the hierarchy of methodologies. Simple qualitative matrices are excellent for communication and initial prioritisation, while quantitative approaches are indispensable for complex, high-value decisions requiring evidence-based investment foundations.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-users"></i> My Contributions to Team Activities</h2>
+                
+                <div class="team-experience">
+                    <h3><i class="fas fa-puzzle-piece"></i> Role as Synthesis Specialist</h3>
+                    <p>In the Unit 6 team project, my designated role was Member 3, responsible for Recommendations and Summary. This placed me in a crucial synthesising position at the end of the team workflow, requiring integration of diverse analyses into a cohesive strategic narrative.</p>
+                </div>
+                
+                <div class="reflection-point">
+                    <h4><i class="fas fa-chart-bar"></i> Analytical Integration</h4>
+                    <p>My primary contribution was creating comparative analysis tables that visually contrasted risk profiles and answering core business questions by weaving together team findings. This required connecting technical vulnerabilities to business consequences and strategic opportunities.</p>
+                </div>
+                
+                <div class="reflection-point">
+                    <h4><i class="fas fa-road"></i> Strategic Roadmapping</h4>
+                    <p>I designed the phased implementation timeline, demonstrating understanding that risk management extends beyond planning to execution. The phased approach itself became a risk mitigation tactic, allowing for organizational learning and adaptation.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-handshake"></i> Experience as Development Team Member</h2>
+                <p>The experience of working as part of a "development team" simulating a professional consultancy was immensely valuable. It mirrored real-world dynamics where specialists must collaborate to produce a unified deliverable.</p>
+                
+                <div class="reflection-point">
+                    <h4><i class="fas fa-comments"></i> Communication Challenges</h4>
+                    <p>A key challenge was integrating different perspectives and working styles. Establishing a common language around risk concepts and ensuring consistent assessment scales required deliberate effort and clear communication.</p>
+                </div>
+                
+                <div class="reflection-point">
+                    <h4><i class="fas fa-clipboard-check"></i> Professional Accountability</h4>
+                    <p>The peer review process introduced a layer of professional accountability, reinforcing that contributions are not just about completing tasks but about quality, timeliness, and collaborative spirit.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-graduation-cap"></i> Impact on Professional and Personal Development</h2>
+                
+                <div class="professional-impact">
+                    <h3><i class="fas fa-toolbox"></i> Professional Toolkit</h3>
+                    <p>This module has equipped me with a framework and vocabulary I can immediately apply in my career. I now possess the ability to:</p>
+                    <ul>
+                        <li>Structure risk assessments using established frameworks</li>
+                        <li>Justify security investments using quantitative, business-focused language</li>
+                        <li>Design resilient architectures with clear DR/BCP requirements</li>
+                        <li>Understand and articulate compliance obligations like GDPR</li>
+                    </ul>
+                </div>
+                
+                <div class="reflection-point">
+                    <h4><i class="fas fa-comment-dots"></i> Communication Mastery</h4>
+                    <p>The experience of writing the Unit 11 Executive Summary honed my ability to communicate complex, technical risks to non-technical, executive audiences—a skill of inestimable value in any professional context.</p>
+                </div>
+                
+                <div class="reflection-point">
+                    <h4><i class="fas fa-brain"></i> Cognitive Transformation</h4>
+                    <p>Personally, this module has cultivated a more critical and structured mindset. I find myself automatically thinking in terms of assumptions, failure points, and impact measurement. The concepts of probability and uncertainty have changed how I approach problems beyond academic contexts.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-flag-checkered"></i> Conclusion</h2>
+                <p>This module has transformed my view of risk from a negative concept to be avoided into a positive dimension of business to be managed and leveraged. The progression from the collaborative, foundational Status Document to the individual, sophisticated Executive Summary perfectly encapsulates my journey from a student of risk to a budding practitioner.</p>
+                
+                <div class="team-experience">
+                    <h3><i class="fas fa-seedling"></i> Growth Trajectory</h3>
+                    <p>The evolution witnessed across these units represents not just knowledge acquisition but fundamental perspective transformation. I now approach risk with confidence, seeing it as an integral aspect of strategic decision-making rather than a technical compliance requirement.</p>
+                </div>
+            </div>
+
+            <div class="word-count">
+                <p><strong>Word Count:</strong> 998 words</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

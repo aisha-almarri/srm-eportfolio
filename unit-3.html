@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3: Threat Modeling | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .threat-category {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .threat-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .threat-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .critical-finding {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .methodology-box {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-bug"></i> Unit 3: Threat Modeling</h1>
+            <p>Methodologies and systematic threat analysis</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> November 2024</span>
+                <span><i class="fas fa-clock"></i> STRIDE Methodology</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-project-diagram"></i> Threat Model Report</h2>
+                <div class="methodology-box">
+                    <h3><i class="fas fa-web-application"></i> Threat Model for Web Application</h3>
+                    <p><strong>Author:</strong> Aisha Almarri | <strong>Date:</strong> November 2024</p>
+                    <p><strong>Methodology Used:</strong> STRIDE (as per the Threat Modeling Manifesto, 2020, and Shevchenko et al.)</p>
+                    <p><strong>Tool:</strong> Microsoft Threat Modeling Tool</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-cogs"></i> STRIDE Analysis Process</h2>
+                
+                <div class="threat-category">
+                    <div class="threat-header">
+                        <div class="threat-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <h3>Spoofing</h3>
+                    </div>
+                    <p>Risk of an attacker spoofing a user's identity through compromised credentials or session hijacking.</p>
+                </div>
+                
+                <div class="threat-category">
+                    <div class="threat-header">
+                        <div class="threat-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>Tampering</h3>
+                    </div>
+                    <p>Risk of tampering with data in the database through SQL injection or unauthorized data modifications.</p>
+                </div>
+                
+                <div class="threat-category">
+                    <div class="threat-header">
+                        <div class="threat-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h3>Repudiation</h3>
+                    </div>
+                    <p>Risk that a user denies performing an action due to inadequate logging and audit trails.</p>
+                </div>
+                
+                <div class="threat-category">
+                    <div class="threat-header">
+                        <div class="threat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Information Disclosure</h3>
+                    </div>
+                    <p>Risk of exposing sensitive customer data through insecure APIs or improper access controls.</p>
+                </div>
+                
+                <div class="threat-category">
+                    <div class="threat-header">
+                        <div class="threat-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Denial of Service</h3>
+                    </div>
+                    <p>Risk of the application being overwhelmed through DDoS attacks or resource exhaustion.</p>
+                </div>
+                
+                <div class="threat-category">
+                    <div class="threat-header">
+                        <div class="threat-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Elevation of Privilege</h3>
+                    </div>
+                    <p>Risk of a user gaining admin rights through privilege escalation vulnerabilities.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> Key Finding</h2>
+                <div class="critical-finding">
+                    <h3><i class="fas fa-bullseye"></i> Critical Threat Identified</h3>
+                    <p>The most critical threat identified was <strong>Information Disclosure via the web server-to-database communication channel</strong>. This directly links back to the risk we identified in Unit 2 regarding customer data protection.</p>
+                    <p>This finding emphasized the need for encrypted database connections, proper access controls, and regular security assessments of database communication channels.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-lightbulb"></i> Methodology Insights</h2>
+                <div class="threat-category">
+                    <h4><i class="fas fa-sitemap"></i> Data Flow Diagrams (DFD)</h4>
+                    <p>Creating DFDs helped visualize the application architecture and identify potential attack vectors at each data flow point.</p>
+                </div>
+                
+                <div class="threat-category">
+                    <h4><i class="fas fa-list-ol"></i> Systematic Approach</h4>
+                    <p>The STRIDE methodology provided a structured framework for analyzing threats across different system components systematically.</p>
+                </div>
+                
+                <div class="threat-category">
+                    <h4><i class="fas fa-link"></i> Inter-unit Connections</h4>
+                    <p>This threat modeling exercise directly connected to Unit 2's risk analysis, demonstrating how identified risks translate into specific technical threats.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

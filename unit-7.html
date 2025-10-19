@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 7: Quantitative Risk Analysis | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .method-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .critical-insight {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .comparison-box {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            border: 1px solid var(--secondary);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .method-item {
+            background: white;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-calculator"></i> Unit 7: Quantitative Risk Analysis</h1>
+            <p>Moving beyond qualitative guesses to evidence-based decision making</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> December 2024</span>
+                <span><i class="fas fa-clock"></i> Quantitative Methods</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-bullseye"></i> Learning Focus</h2>
+                <div class="method-box">
+                    <h3><i class="fas fa-chart-line"></i> Moving Beyond Qualitative Guesses</h3>
+                    <p>This unit introduced formal methods for quantifying risk and supporting complex decisions, challenging an over-reliance on qualitative scoring. The focus shifted from subjective risk ratings to evidence-based probabilistic analysis.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-book-open"></i> Key Reading Synthesis</h2>
+                
+                <div class="method-box">
+                    <h3><i class="fas fa-search"></i> Critical Review of MCDM Methods</h3>
+                    <p><strong>Asadabadi et al. (2019):</strong> This was a critical review of AHP/ANP, providing a necessary dose of scepticism. It highlighted the potential for ranking reversal and the subjectivity in pairwise comparisons.</p>
+                    
+                    <div class="critical-insight">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Key Insight</h4>
+                        <p>This taught me to see MCDM methods as structured guides for thinking, not mathematical magic bullets. Their utility depends heavily on the expertise of the participants defining the criteria and the quality of the input data.</p>
+                    </div>
+                </div>
+                
+                <div class="method-box">
+                    <h3><i class="fas fa-history"></i> Historical Context & Enterprise Application</h3>
+                    <p><strong>Metropolis (1987) & Fraser & Simkins (Ch. 22):</strong> The historical context of the Monte Carlo method was fascinating. It illuminated the core concept: using computational power to model complex systems with inherent uncertainty by running thousands of simulations.</p>
+                    
+                    <div class="method-item">
+                        <h4><i class="fas fa-building"></i> Enterprise Context</h4>
+                        <p>Fraser & Simkins contextualised this within ERM, showing how Monte Carlo simulation can model financial and operational risks to produce probability distributions of outcomes, which is far more informative than a single-point estimate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-analytics"></i> Critical Analysis and Application</h2>
+                
+                <div class="comparison-box">
+                    <h3><i class="fas fa-balance-scale"></i> Complementary Methodologies</h3>
+                    <p>The readings created a powerful contrast between different quantitative approaches:</p>
+                    
+                    <div class="method-item">
+                        <h4><i class="fas fa-sitemap"></i> AHP/ANP for Structured Decision-Making</h4>
+                        <p>Provides a structured way to handle multi-criteria decisions (e.g., "Which risk should we treat first?") by breaking down complex problems into hierarchical structures and using pairwise comparisons.</p>
+                    </div>
+                    
+                    <div class="method-item">
+                        <h4><i class="fas fa-dice"></i> Monte Carlo for Uncertainty Modeling</h4>
+                        <p>Handles deep uncertainty in the inputs themselves (e.g., "What is the probable financial impact range of this data breach?") by simulating thousands of possible scenarios based on probability distributions.</p>
+                    </div>
+                </div>
+                
+                <div class="method-box">
+                    <h3><i class="fas fa-puzzle-piece"></i> Practical Integration</h3>
+                    <p>For our project, this meant recognising that these are complementary tools for different stages of the risk analysis process:</p>
+                    <ul>
+                        <li><strong>AHP:</strong> For prioritizing which risks to address first based on multiple criteria</li>
+                        <li><strong>Monte Carlo:</strong> For understanding the potential impact range of high-priority risks</li>
+                        <li><strong>Bayesian Networks:</strong> For modeling complex causal relationships between risks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-lightbulb"></i> Key Methodological Insights</h2>
+                
+                <div class="method-item">
+                    <h3><i class="fas fa-chart-bar"></i> From Point Estimates to Distributions</h3>
+                    <p>The most significant shift was moving from single-point estimates ("this will cost £50,000") to probability distributions ("there's a 90% chance it will cost between £40,000-£60,000").</p>
+                </div>
+                
+                <div class="method-item">
+                    <h3><i class="fas fa-cogs"></i> Tool Selection Criteria</h3>
+                    <p>Different quantitative methods serve different purposes:
+                    <ul>
+                        <li><strong>Simple scenarios:</strong> Basic probability calculations</li>
+                        <li><strong>Multi-criteria decisions:</strong> AHP/ANP</li>
+                        <li><strong>Complex uncertainty:</strong> Monte Carlo simulation</li>
+                        <li><strong>Causal relationships:</strong> Bayesian networks</li>
+                    </ul>
+                </div>
+                
+                <div class="method-item">
+                    <h3><i class="fas fa-database"></i> Data Quality Importance</h3>
+                    <p>All quantitative methods depend on the quality of input data. Garbage in, garbage out remains a fundamental principle regardless of methodological sophistication.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

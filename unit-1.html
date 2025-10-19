@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Risk Science | Security & Risk Management Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .blog-content {
+            padding: 3rem;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .content-section h3 {
+            color: var(--dark);
+            margin: 1.5rem 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .content-section p {
+            margin: 1rem 0;
+            color: #555;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .content-section ul, .content-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content-section li {
+            margin: 0.8rem 0;
+            color: #555;
+        }
+        
+        .insight-box {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .application-box {
+            background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .key-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .key-point i {
+            color: var(--secondary);
+            margin-top: 0.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1><i class="fas fa-seedling"></i> Unit 1: Risk Science Fundamentals</h1>
+            <p>Foundational concepts and risk theory principles</p>
+            <div class="blog-meta">
+                <span><i class="fas fa-user-graduate"></i> Aisha Almarri</span>
+                <span><i class="fas fa-calendar"></i> October 2024</span>
+                <span><i class="fas fa-clock"></i> Core Concepts</span>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+        
+        <div class="blog-content">
+            <div class="content-section">
+                <h2><i class="fas fa-graduation-cap"></i> Summary of Learning</h2>
+                <p>This unit introduced the foundational concepts of risk. Aven & Thekdi (2025) define risk as "the effect of uncertainty on objectives," which moved me away from simply thinking of risk as 'chance of something bad happening.' I contrasted this with the more traditional, quantitative approach critiqued by Hubbard (2020), who argues that many risk management practices are fundamentally broken due to poor measurement.</p>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-lightbulb"></i> Key Insights</h2>
+                
+                <div class="key-point">
+                    <i class="fas fa-1"></i>
+                    <div>
+                        <h3>Risk vs. Uncertainty</h3>
+                        <p>I now understand that risk is not just about known probabilities but also about uncertainty and the potential for surprise. This distinction fundamentally changes how we approach risk assessment and management.</p>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <i class="fas fa-2"></i>
+                    <div>
+                        <h3>Qualitative vs. Quantitative</h3>
+                        <p>The NIST SP 800-30 guide provides a structured, qualitative approach, while Hubbard advocates for more rigorous quantification. This tension between qualitative assessment and quantitative measurement became a key theme I followed throughout the module.</p>
+                    </div>
+                </div>
+                
+                <div class="key-point">
+                    <i class="fas fa-3"></i>
+                    <div>
+                        <h3>Human Element</h3>
+                        <p>The Hancock et al. (2024) reading on maritime rights highlighted that risk models can have real-world ethical consequences if they ignore human factors. This emphasized the importance of considering the human dimension in all risk assessments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-tools"></i> Application to Practice</h2>
+                <div class="application-box">
+                    <p>I started a simple risk register for a personal project using a template from the NIST guide, categorising risks based on likelihood and impact. This was my first practical step in applying risk theory and demonstrated how theoretical concepts translate into practical risk management tools.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2><i class="fas fa-book"></i> Academic References</h2>
+                <ul>
+                    <li><strong>Aven & Thekdi (2025)</strong> - <em>Risk Science</em> - Provided the foundational definition of risk as "effect of uncertainty on objectives"</li>
+                    <li><strong>Hubbard (2020)</strong> - <em>The Failure of Risk Management</em> - Critiqued traditional risk management practices</li>
+                    <li><strong>NIST SP 800-30</strong> - Risk Management Guide for Information Technology Systems</li>
+                    <li><strong>Hancock et al. (2024)</strong> - Maritime human rights and risk modeling implications</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
