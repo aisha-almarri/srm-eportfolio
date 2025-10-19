@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security and Risk Management Portfolio | Aisha Almarri</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header-content .subtitle {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .student-info {
+            display: inline-block;
+            background: var(--light);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        /* Navigation Cards */
+        .main-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .nav-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .nav-card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-card ul {
+            list-style: none;
+        }
+        
+        .nav-card li {
+            margin: 0.8rem 0;
+            padding: 0.8rem;
+            background: var(--light);
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-card li:hover {
+            background: #d6eaf8;
+        }
+        
+        .nav-card a {
+            color: var(--dark);
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
+        
+        .nav-card a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Unit Grid */
+        .units-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .unit-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .unit-card:hover {
+            transform: translateX(5px);
+            background: #e8f4fc;
+        }
+        
+        .unit-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .unit-card p {
+            color: var(--dark);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .unit-card a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Learning Outcomes */
+        .outcomes-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .outcome-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .outcome-item::before {
+            content: "✓";
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .main-nav {
+                grid-template-columns: 1fr;
+            }
+            
+            .units-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Security and Risk Management</h1>
+                <p class="subtitle">Professional E-Portfolio</p>
+                <div class="student-info">
+                    <strong>Aisha Almarri</strong> | MSc Enterprise IT Management | University of Essex Online
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Navigation -->
+        <div class="main-nav">
+            <div class="nav-card">
+                <h2>📚 Portfolio Contents</h2>
+                <ul>
+                    <li><a href="#reflection">1000-Word Reflective Analysis</a></li>
+                    <li><a href="#units">12 Learning Units</a></li>
+                    <li><a href="#artefacts">Project Artefacts</a></li>
+                    <li><a href="#outcomes">Learning Outcomes</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-card">
+                <h2>🎯 Assessment Focus</h2>
+                <ul>
+                    <li>Application of Knowledge (20%)</li>
+                    <li>Collaboration & Teamwork (20%)</li>
+                    <li>Critical Reflection (40%)</li>
+                    <li>Structure & Presentation (10%)</li>
+                    <li>Academic Integrity (10%)</li>
+                </ul>
+            </div>
+            
+            <div class="nav-card">
+                <h2>🔗 Quick Access</h2>
+                <ul>
+                    <li><a href="reflections/reflection.md" target="_blank">View Full Reflection</a></li>
+                    <li><a href="https://github.com/aisha-almarri/srm-eportfolio" target="_blank">GitHub Repository</a></li>
+                    <li><a href="#contact">Submission Details</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Reflection Section -->
+        <section id="reflection" class="units-section">
+            <h2>📝 Critical Reflection</h2>
+            <p>A comprehensive 998-word reflective analysis following Rolfe's model (What? So What? Now What?), evaluating my journey through security and risk management concepts.</p>
+            <div class="unit-card">
+                <h3>Reflective Analysis Document</h3>
+                <p>Exploring the evolution from basic risk concepts to advanced quantitative risk management strategies.</p>
+                <a href="reflections/reflection.md" target="_blank">Read Full Reflection →</a>
+            </div>
+        </section>
+
+        <!-- Units Section -->
+        <section id="units" class="units-section">
+            <h2>📖 Learning Units (1-12)</h2>
+            <p>Comprehensive coverage of security and risk management topics through 12 structured units:</p>
+            
+            <div class="units-grid">
+                <div class="unit-card">
+                    <h3>Unit 1: Risk Science Fundamentals</h3>
+                    <p>Introduction to core risk concepts and theories</p>
+                    <a href="artefacts/unit-1/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 2: Enterprise Risk Management</h3>
+                    <p>ERM frameworks and ISO 31000 implementation</p>
+                    <a href="artefacts/unit-2/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 3: Threat Modeling</h3>
+                    <p>Methodologies and systematic threat analysis</p>
+                    <a href="artefacts/unit-3/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 4: Secure System Engineering</h3>
+                    <p>Security by design principles</p>
+                    <a href="artefacts/unit-4/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 5: Risk Standards & Frameworks</h3>
+                    <p>Implementation of structured risk processes</p>
+                    <a href="artefacts/unit-5/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 6: Digitalisation Risk Analysis</h3>
+                    <p>Team project - Risk identification report</p>
+                    <a href="artefacts/unit-6/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 7: Quantitative Risk Analysis</h3>
+                    <p>Advanced decision-making methods</p>
+                    <a href="artefacts/unit-7/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 8: Risk Modeling Techniques</h3>
+                    <p>Practical applications and simulations</p>
+                    <a href="artefacts/unit-8/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 9: Service Availability</h3>
+                    <p>Availability risk management strategies</p>
+                    <a href="artefacts/unit-9/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 10: Disaster Recovery</h3>
+                    <p>Business continuity planning</p>
+                    <a href="artefacts/unit-10/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 11: Advanced Risk Management</h3>
+                    <p>Individual project - Executive summary</p>
+                    <a href="artefacts/unit-11/summary.md" target="_blank">View Work →</a>
+                </div>
+                
+                <div class="unit-card">
+                    <h3>Unit 12: Integration & Synthesis</h3>
+                    <p>Final module integration</p>
+                    <a href="artefacts/unit-12/summary.md" target="_blank">View Work →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Outcomes -->
+        <section id="outcomes" class="outcomes-section">
+            <h2>🎓 Learning Outcomes Demonstrated</h2>
+            <div class="outcomes-grid">
+                <div class="outcome-item">
+                    Identify and analyse critically security risks, threats and vulnerabilities
+                </div>
+                <div class="outcome-item">
+                    Gather and synthesise information from multiple sources
+                </div>
+                <div class="outcome-item">
+                    Critically determine appropriate methodologies and tools
+                </div>
+                <div class="outcome-item">
+                    Articulate legal, social, ethical, and professional issues
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <p><strong>Submission Date:</strong> 16th October 2025</p>
+            <p><strong>GitHub Repository:</strong> <a href="https://github.com/aisha-almarri/srm-eportfolio" style="color: white;">https://github.com/aisha-almarri/srm-eportfolio</a></p>
+            <p>© 2025 Aisha Almarri - MSc Enterprise IT Management</p>
+        </footer>
+    </div>
+</body>
+</html>
