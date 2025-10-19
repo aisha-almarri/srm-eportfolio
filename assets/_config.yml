@@ -1,4 +1,6 @@
-title: "Security and Risk Management E-Portfolio"
-description: "Professional portfolio showcasing security and risk management learning journey - University of Essex Online"
+title: "Security & Risk Management Portfolio"
+description: "Professional e-portfolio showcasing comprehensive learning in security and risk management - University of Essex Online"
 theme: jekyll-theme-minimal
 show_downloads: false
+github:
+  is_project_page: false

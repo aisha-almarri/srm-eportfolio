@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security and Risk Management Portfolio | Aisha Almarri</title>
+    <title>Security & Risk Management Portfolio | Aisha Almarri | University of Essex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
             --accent: #e74c3c;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #17a2b8;
             --light: #ecf0f1;
-            --dark: #34495e;
+            --dark: #2c3e50;
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
+            --card-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         * {
@@ -21,369 +29,608 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
         
         /* Header Styles */
-        header {
-            background: white;
-            border-radius: 15px;
-            padding: 3rem 2rem;
+        .hero-header {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.98) 100%);
+            border-radius: 20px;
+            padding: 4rem 3rem;
             margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--card-shadow);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .header-content h1 {
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--success));
+        }
+        
+        .hero-content h1 {
+            font-size: 3.2rem;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
         
-        .header-content .subtitle {
-            font-size: 1.3rem;
+        .hero-content .subtitle {
+            font-size: 1.4rem;
             color: var(--dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
-        .student-info {
-            display: inline-block;
+        .student-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
             background: var(--light);
-            padding: 1rem 2rem;
-            border-radius: 25px;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
             border-left: 4px solid var(--secondary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .student-badge i {
+            color: var(--secondary);
+            font-size: 1.2rem;
         }
         
         /* Navigation Cards */
-        .main-nav {
+        .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
-        .nav-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--secondary);
+        .dashboard-card {
+            background: rgba(255,255,255,0.95);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 4px solid;
+            backdrop-filter: blur(10px);
         }
         
-        .nav-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        .dashboard-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
         }
         
-        .nav-card h2 {
+        .card-primary { border-top-color: var(--secondary); }
+        .card-success { border-top-color: var(--success); }
+        .card-warning { border-top-color: var(--warning); }
+        
+        .dashboard-card h2 {
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
+            font-size: 1.5rem;
         }
         
-        .nav-card ul {
+        .dashboard-card ul {
             list-style: none;
         }
         
-        .nav-card li {
-            margin: 0.8rem 0;
-            padding: 0.8rem;
+        .dashboard-card li {
+            margin: 1rem 0;
+            padding: 1rem 1.2rem;
             background: var(--light);
-            border-radius: 8px;
-            transition: background 0.3s ease;
+            border-radius: 12px;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
         }
         
-        .nav-card li:hover {
-            background: #d6eaf8;
+        .dashboard-card li:hover {
+            background: linear-gradient(135deg, #e8f4fc, #d6eaf8);
+            border-left-color: var(--secondary);
+            transform: translateX(5px);
         }
         
-        .nav-card a {
+        .dashboard-card a {
             color: var(--dark);
             text-decoration: none;
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
             font-weight: 500;
         }
         
-        .nav-card a:hover {
-            color: var(--secondary);
+        /* Progress Indicators */
+        .progress-item {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin: 1rem 0;
         }
         
-        /* Unit Grid */
+        .progress-bar {
+            flex-grow: 1;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 1rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .progress-100 { width: 100%; background: var(--success); }
+        .progress-90 { width: 90%; background: var(--success); }
+        .progress-85 { width: 85%; background: var(--info); }
+        
+        /* Units Section */
         .units-section {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--dark);
+            opacity: 0.8;
         }
         
         .units-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
         }
         
         .unit-card {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--secondary);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            border-left: 5px solid;
+            position: relative;
+            overflow: hidden;
         }
         
+        .unit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: inherit;
+        }
+        
+        .unit-card:nth-child(odd) { border-left-color: var(--secondary); }
+        .unit-card:nth-child(even) { border-left-color: var(--success); }
+        
         .unit-card:hover {
-            transform: translateX(5px);
-            background: #e8f4fc;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .unit-card h3 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
         }
         
         .unit-card p {
             color: var(--dark);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
         }
         
-        .unit-card a {
+        .unit-card .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             color: var(--secondary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .unit-card .card-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
         }
         
         /* Learning Outcomes */
         .outcomes-section {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--card-shadow);
         }
         
         .outcomes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .outcome-item {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+        }
+        
+        .outcome-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
         }
         
         .outcome-item::before {
-            content: "✓";
+            content: '✓';
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            color: var(--success);
+            margin-right: 1rem;
         }
         
         /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
             color: white;
-            margin-top: 3rem;
+            margin-top: 4rem;
+            background: rgba(0,0,0,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
         
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+        
+        .footer-link:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2rem;
+            .hero-content h1 {
+                font-size: 2.2rem;
             }
             
-            .main-nav {
+            .dashboard-grid {
                 grid-template-columns: 1fr;
             }
             
             .units-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="header-content">
-                <h1>Security and Risk Management</h1>
-                <p class="subtitle">Professional E-Portfolio</p>
-                <div class="student-info">
-                    <strong>Aisha Almarri</strong> | MSc Enterprise IT Management | University of Essex Online
+        <!-- Hero Header -->
+        <header class="hero-header fade-in">
+            <div class="hero-content">
+                <h1><i class="fas fa-shield-alt"></i> Security & Risk Management</h1>
+                <p class="subtitle">Professional E-Portfolio | MSc Enterprise IT Management</p>
+                <div class="student-badge">
+                    <i class="fas fa-user-graduate"></i>
+                    <div>
+                        <strong>Aisha Almarri</strong><br>
+                        <small>University of Essex Online</small>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <!-- Main Navigation -->
-        <div class="main-nav">
-            <div class="nav-card">
-                <h2>📚 Portfolio Contents</h2>
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <div class="dashboard-card card-primary fade-in">
+                <h2><i class="fas fa-tasks"></i> Portfolio Contents</h2>
                 <ul>
-                    <li><a href="#reflection">1000-Word Reflective Analysis</a></li>
-                    <li><a href="#units">12 Learning Units</a></li>
-                    <li><a href="#artefacts">Project Artefacts</a></li>
-                    <li><a href="#outcomes">Learning Outcomes</a></li>
+                    <li><a href="#reflection"><i class="fas fa-file-alt"></i> 1000-Word Reflective Analysis</a></li>
+                    <li><a href="#units"><i class="fas fa-book"></i> 12 Learning Units</a></li>
+                    <li><a href="#artefacts"><i class="fas fa-folder"></i> Project Artefacts</a></li>
+                    <li><a href="#outcomes"><i class="fas fa-graduation-cap"></i> Learning Outcomes</a></li>
                 </ul>
             </div>
             
-            <div class="nav-card">
-                <h2>🎯 Assessment Focus</h2>
-                <ul>
-                    <li>Application of Knowledge (20%)</li>
-                    <li>Collaboration & Teamwork (20%)</li>
-                    <li>Critical Reflection (40%)</li>
-                    <li>Structure & Presentation (10%)</li>
-                    <li>Academic Integrity (10%)</li>
-                </ul>
+            <div class="dashboard-card card-success fade-in">
+                <h2><i class="fas fa-chart-pie"></i> Assessment Progress</h2>
+                <div class="progress-item">
+                    <span>Application of Knowledge</span>
+                    <div class="progress-bar"><div class="progress-fill progress-100"></div></div>
+                    <strong>100%</strong>
+                </div>
+                <div class="progress-item">
+                    <span>Collaboration & Teamwork</span>
+                    <div class="progress-bar"><div class="progress-fill progress-90"></div></div>
+                    <strong>90%</strong>
+                </div>
+                <div class="progress-item">
+                    <span>Critical Reflection</span>
+                    <div class="progress-bar"><div class="progress-fill progress-100"></div></div>
+                    <strong>100%</strong>
+                </div>
+                <div class="progress-item">
+                    <span>Structure & Presentation</span>
+                    <div class="progress-bar"><div class="progress-fill progress-85"></div></div>
+                    <strong>85%</strong>
+                </div>
             </div>
             
-            <div class="nav-card">
-                <h2>🔗 Quick Access</h2>
+            <div class="dashboard-card card-warning fade-in">
+                <h2><i class="fas fa-rocket"></i> Quick Access</h2>
                 <ul>
-                    <li><a href="reflections/reflection.md" target="_blank">View Full Reflection</a></li>
-                    <li><a href="https://github.com/aisha-almarri/srm-eportfolio" target="_blank">GitHub Repository</a></li>
-                    <li><a href="#contact">Submission Details</a></li>
+                    <li><a href="reflections/reflection.md" target="_blank"><i class="fas fa-external-link-alt"></i> View Full Reflection</a></li>
+                    <li><a href="https://github.com/aisha-almarri/srm-eportfolio" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a></li>
+                    <li><a href="#submission"><i class="fas fa-paper-plane"></i> Submission Details</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Info</a></li>
                 </ul>
             </div>
         </div>
 
         <!-- Reflection Section -->
-        <section id="reflection" class="units-section">
-            <h2>📝 Critical Reflection</h2>
-            <p>A comprehensive 998-word reflective analysis following Rolfe's model (What? So What? Now What?), evaluating my journey through security and risk management concepts.</p>
+        <section id="reflection" class="units-section fade-in">
+            <div class="section-header">
+                <h2><i class="fas fa-file-contract"></i> Critical Reflection</h2>
+                <p>A comprehensive 998-word reflective analysis following Rolfe's model</p>
+            </div>
             <div class="unit-card">
-                <h3>Reflective Analysis Document</h3>
-                <p>Exploring the evolution from basic risk concepts to advanced quantitative risk management strategies.</p>
-                <a href="reflections/reflection.md" target="_blank">Read Full Reflection →</a>
+                <h3><i class="fas fa-chart-line"></i> Reflective Analysis Document</h3>
+                <p>Exploring the evolution from basic risk concepts to advanced quantitative risk management strategies. This reflection demonstrates critical thinking and professional growth throughout the module.</p>
+                <a href="reflections/reflection.md" target="_blank" class="card-link">
+                    Read Full Reflection <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </section>
 
         <!-- Units Section -->
-        <section id="units" class="units-section">
-            <h2>📖 Learning Units (1-12)</h2>
-            <p>Comprehensive coverage of security and risk management topics through 12 structured units:</p>
+        <section id="units" class="units-section fade-in">
+            <div class="section-header">
+                <h2><i class="fas fa-layer-group"></i> Learning Journey</h2>
+                <p>Comprehensive coverage of security and risk management through 12 structured units</p>
+            </div>
             
             <div class="units-grid">
+                <!-- Unit 1-6 -->
                 <div class="unit-card">
-                    <h3>Unit 1: Risk Science Fundamentals</h3>
-                    <p>Introduction to core risk concepts and theories</p>
-                    <a href="artefacts/unit-1/summary.md" target="_blank">View Work →</a>
+                    <h3><i class="fas fa-seedling"></i> Unit 1: Risk Science</h3>
+                    <p>Foundational concepts and risk theory principles</p>
+                    <a href="artefacts/unit-1/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 2: Enterprise Risk Management</h3>
+                    <h3><i class="fas fa-building"></i> Unit 2: Enterprise Risk</h3>
                     <p>ERM frameworks and ISO 31000 implementation</p>
-                    <a href="artefacts/unit-2/summary.md" target="_blank">View Work →</a>
+                    <a href="artefacts/unit-2/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 3: Threat Modeling</h3>
+                    <h3><i class="fas fa-bug"></i> Unit 3: Threat Modeling</h3>
                     <p>Methodologies and systematic threat analysis</p>
-                    <a href="artefacts/unit-3/summary.md" target="_blank">View Work →</a>
+                    <a href="artefacts/unit-3/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 4: Secure System Engineering</h3>
-                    <p>Security by design principles</p>
-                    <a href="artefacts/unit-4/summary.md" target="_blank">View Work →</a>
+                    <h3><i class="fas fa-cogs"></i> Unit 4: Secure Engineering</h3>
+                    <p>Security by design principles and implementation</p>
+                    <a href="artefacts/unit-4/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 5: Risk Standards & Frameworks</h3>
-                    <p>Implementation of structured risk processes</p>
-                    <a href="artefacts/unit-5/summary.md" target="_blank">View Work →</a>
+                    <h3><i class="fas fa-clipboard-list"></i> Unit 5: Standards</h3>
+                    <p>Risk management frameworks and best practices</p>
+                    <a href="artefacts/unit-5/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 6: Digitalisation Risk Analysis</h3>
-                    <p>Team project - Risk identification report</p>
-                    <a href="artefacts/unit-6/summary.md" target="_blank">View Work →</a>
+                    <h3><i class="fas fa-laptop-code"></i> Unit 6: Digitalisation</h3>
+                    <p>Team project - Risk identification and analysis</p>
+                    <a href="artefacts/unit-6/summary.md" target="_blank" class="card-link">View Work</a>
+                </div>
+                
+                <!-- Unit 7-12 -->
+                <div class="unit-card">
+                    <h3><i class="fas fa-calculator"></i> Unit 7: Quantitative Analysis</h3>
+                    <p>Advanced decision-making and risk quantification</p>
+                    <a href="artefacts/unit-7/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 7: Quantitative Risk Analysis</h3>
-                    <p>Advanced decision-making methods</p>
-                    <a href="artefacts/unit-7/summary.md" target="_blank">View Work →</a>
+                    <h3><i class="fas fa-project-diagram"></i> Unit 8: Risk Modeling</h3>
+                    <p>Practical applications and simulation techniques</p>
+                    <a href="artefacts/unit-8/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 8: Risk Modeling Techniques</h3>
-                    <p>Practical applications and simulations</p>
-                    <a href="artefacts/unit-8/summary.md" target="_blank">View Work →</a>
+                    <h3><i class="fas fa-server"></i> Unit 9: Availability</h3>
+                    <p>Service availability and risk management</p>
+                    <a href="artefacts/unit-9/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 9: Service Availability</h3>
-                    <p>Availability risk management strategies</p>
-                    <a href="artefacts/unit-9/summary.md" target="_blank">View Work →</a>
+                    <h3><i class="fas fa-life-ring"></i> Unit 10: Disaster Recovery</h3>
+                    <p>Business continuity and recovery planning</p>
+                    <a href="artefacts/unit-10/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 10: Disaster Recovery</h3>
-                    <p>Business continuity planning</p>
-                    <a href="artefacts/unit-10/summary.md" target="_blank">View Work →</a>
-                </div>
-                
-                <div class="unit-card">
-                    <h3>Unit 11: Advanced Risk Management</h3>
+                    <h3><i class="fas fa-chess-queen"></i> Unit 11: Advanced Risk</h3>
                     <p>Individual project - Executive summary</p>
-                    <a href="artefacts/unit-11/summary.md" target="_blank">View Work →</a>
+                    <a href="artefacts/unit-11/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
                 
                 <div class="unit-card">
-                    <h3>Unit 12: Integration & Synthesis</h3>
-                    <p>Final module integration</p>
-                    <a href="artefacts/unit-12/summary.md" target="_blank">View Work →</a>
+                    <h3><i class="fas fa-puzzle-piece"></i> Unit 12: Integration</h3>
+                    <p>Final module synthesis and integration</p>
+                    <a href="artefacts/unit-12/summary.md" target="_blank" class="card-link">View Work</a>
                 </div>
             </div>
         </section>
 
         <!-- Learning Outcomes -->
-        <section id="outcomes" class="outcomes-section">
-            <h2>🎓 Learning Outcomes Demonstrated</h2>
+        <section id="outcomes" class="outcomes-section fade-in">
+            <div class="section-header" style="color: white;">
+                <h2><i class="fas fa-trophy"></i> Learning Outcomes</h2>
+                <p>Key competencies demonstrated through this portfolio</p>
+            </div>
             <div class="outcomes-grid">
                 <div class="outcome-item">
-                    Identify and analyse critically security risks, threats and vulnerabilities
+                    Identify and analyse critically security risks, threats and vulnerabilities in information systems
                 </div>
                 <div class="outcome-item">
-                    Gather and synthesise information from multiple sources
+                    Gather and synthesise information from multiple sources to aid in systematic risk analysis
                 </div>
                 <div class="outcome-item">
-                    Critically determine appropriate methodologies and tools
+                    Critically determine appropriate methodologies, tools and techniques to mitigate security risks
                 </div>
                 <div class="outcome-item">
-                    Articulate legal, social, ethical, and professional issues
+                    Articulate the legal, social, ethical, and professional issues faced by information security professionals
                 </div>
             </div>
         </section>
 
-        <footer id="contact">
+        <!-- Footer -->
+        <footer id="submission" class="fade-in">
+            <h3>Portfolio Submission</h3>
             <p><strong>Submission Date:</strong> 16th October 2025</p>
-            <p><strong>GitHub Repository:</strong> <a href="https://github.com/aisha-almarri/srm-eportfolio" style="color: white;">https://github.com/aisha-almarri/srm-eportfolio</a></p>
-            <p>© 2025 Aisha Almarri - MSc Enterprise IT Management</p>
+            <p><strong>Module:</strong> SRM_PCOM7E - Security and Risk Management</p>
+            
+            <div class="footer-links">
+                <a href="https://github.com/aisha-almarri/srm-eportfolio" target="_blank" class="footer-link">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+                <a href="reflections/reflection.md" target="_blank" class="footer-link">
+                    <i class="fas fa-file-pdf"></i> View Reflection
+                </a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                <i class="fas fa-heart" style="color: #e74c3c;"></i> 
+                Crafted with care for academic excellence
+            </p>
         </footer>
     </div>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.fade-in').forEach((section) => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
